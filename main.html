@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<form action="" name="frm">
+	<div align="center">
+	<strong>개인 발언 시간을 설정해 주세요!</strong><br><br>
+
+	발언시간: <input type="number" min="0" id="settingMinutes" style="width: 40px"> 분
+	<input type="number" min="0" id="settingSeconds" style="width: 40px"> 초
+	 <!-- 발언 시간 -->
+	<br>
+	인원: <input type="number" min="1" id="people" style="width: 40px"> 명
+	<br>
+	<input type="button" value="Start" onclick="Set()">
+	<br><br>
+	
+	<span class="countdown">시간 설정 중..</span> <input type="button" value="Play" onclick="Play(0)"> <input type="button" value="Stop" onclick="Stop(0)">
+	<br><br>
+	<span class="countdown">t</span><input type="button" value="Play" onclick="Play(1)"> <input type="button" value="Stop" onclick="Stop(1)">
+	<br><br>
+	<span class="countdown">test </span><input type="button" value="Play" onclick="Play(2)"> <input type="button" value="Stop" onclick="Stop(2)">
+
+	</div>
+	</form>
+
+<script type="text/javascript">
+	var count = 0;
+	var time=[];
+	var countList=[];
+
+	function Set() {
+		clearInterval(time);
+	 	count=60*Number(document.getElementById("settingMinutes").value)+Number(document.getElementById("settingSeconds").value);
+
+	 	var lists=document.getElementsByClassName("countdown");
+		var peopleNum=Number(document.getElementById('people').value);
+	 	for (var i=0; i<peopleNum; i++){
+	 		if (count%60<10)
+				lists[i].innerHTML= parseInt(count/60)+" : 0"+(count%60);
+			else
+				lists[i].innerHTML= parseInt(count/60)+" : "+(count%60);
+			countList[i]=count;
+		}
+	}
+
+	function Play(n){
+		time[n] = setInterval(function(){Count(n);},1000);
+	}
+	function Stop(n){
+		clearInterval(time[n]);
+	}
+
+	function Count(n) {
+		countList[n]=countList[n]-1;
+		inCount=countList[n];
+		var lists=document.getElementsByClassName("countdown");
+		if (inCount%60<10){
+			lists[n].innerHTML= parseInt(inCount/60)+" : 0"+(inCount%60);
+		}
+		else{
+			lists[n].innerHTML= parseInt(inCount/60)+" : "+(inCount%60);
+		}
+		if(inCount <= 0) { 
+			clearInterval(time[n]);
+			alert("시간이 완료되었습니다.")
+			// 태양 넣기
+		}
+	}
+	
+	</script>
+</body>
+</html>

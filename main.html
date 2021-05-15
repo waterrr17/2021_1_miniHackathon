@@ -4,29 +4,95 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>회의시간 지키미</title>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/6df3e72b0c.js" crossorigin="anonymous"></script>
+	<link href="./bootstrap4/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<form action="" name="frm">
-	<div align="center">
-	<strong>개인 발언 시간을 설정해 주세요!</strong><br><br>
+<div class="container-fluid">
+	<div id="setting">
+		<div class="row">
+			<div class="col text-center" id="ment">
+				<strong>개인 발언 시간을 설정해 주세요!</strong> <br>
 
-	발언시간: <input type="number" min="0" id="settingMinutes"> 분
-	<input type="number" min="0" id="settingSeconds"> 초
-	<br>
-	인원: <input type="number" min="1" max="12" id="people"> 명
-	<br>
-	<input type="button" value="Start" onclick="Set()">
-	<br><br>
-	
-	<span class="countdown">시간 설정 중..</span> <input type="button" value="Play" onclick="Play(0)"> <input type="button" value="Stop" onclick="Stop(0)">
-	<br><br>
-	<span class="countdown">t</span><input type="button" value="Play" onclick="Play(1)"> <input type="button" value="Stop" onclick="Stop(1)">
-	<br><br>
-	<span class="countdown">test </span><input type="button" value="Play" onclick="Play(2)"> <input type="button" value="Stop" onclick="Stop(2)">
-
+			</div>
+		</div>
+		<div class="row">
+			<div class="col text-center">
+				발언시간: <input type="number" min="0" id="settingMinutes"> 분
+				<input type="number" min="0" id="settingSeconds"> 초
+			</div>
+		</div>
+		<div class="row">
+			<div class="col text-center">
+				인원: <input type="number" min="1" max="12" id="people"> 명
+			</div>
+		</div>
+		<div class="row">
+			<div class="col text-center">
+				<input type="button" value="Start" onclick="Set()">
+			</div>
+		</div>
 	</div>
-	</form>
+	<div class="row people">
+		<div class="col">
+			<i class="fas fa-dog icon"></i>
+			<input class="pName" placeholder="이름">
+			<br>
+			<span class="countdown">시간 설정 중..</span> <br>
+			<button onclick="Play(0)"><i class="fas fa-play"></i></button> 
+			<button onclick="Stop(0)"><i class="fas fa-pause"></i></button>
+		</div>
+		<div class="col">
+			<span class="countdown">t</span><br><input type="button" value="Play" onclick="Play(1)"> <input type="button" value="Stop" onclick="Stop(1)">
+		</div>
+		<div class="col">
+			<span class="countdown">test </span><br><input type="button" value="Play" onclick="Play(2)"> <input type="button" value="Stop" onclick="Stop(2)">
+		</div>
+		<div class="col">
+			<span class="countdown">test </span><br><input type="button" value="Play" onclick="Play(3)"> <input type="button" value="Stop" onclick="Stop(3)">
+		</div>
+	</div>
+	<div class="row people">
+		<div class="col">
+			<span class="countdown">시간 설정 중..</span> <br><input type="button" value="Play" onclick="Play(4)"> <input type="button" value="Stop" onclick="Stop(4)">
+		</div>
+		<div class="col">
+			<span class="countdown">t</span><br><input type="button" value="Play" onclick="Play(5)"> <input type="button" value="Stop" onclick="Stop(5)">
+		</div>
+		<div class="col">
+			<span class="countdown">test </span><br><input type="button" value="Play" onclick="Play(6)"> <input type="button" value="Stop" onclick="Stop(6)">
+		</div>
+		<div class="col">
+			<span class="countdown">test </span><br><input type="button" value="Play" onclick="Play(7)"> <input type="button" value="Stop" onclick="Stop(7)">
+		</div>
+	</div>
+	<div class="row people">
+		<div class="col">
+			<span class="countdown">시간 설정 중..</span> <br><input type="button" value="Play" onclick="Play(8)"> <input type="button" value="Stop" onclick="Stop(8)">
+		</div>
+		<div class="col">
+			<span class="countdown">t</span><br><input type="button" value="Play" onclick="Play(9)"> <input type="button" value="Stop" onclick="Stop(9)">
+		</div>
+		<div class="col">
+			<span class="countdown">test </span><br><input type="button" value="Play" onclick="Play(10)"> <input type="button" value="Stop" onclick="Stop(10)">
+		</div>
+		<div class="col">
+			<span class="countdown">test </span><br><input type="button" value="Play" onclick="Play(11)"> <input type="button" value="Stop" onclick="Stop(11)">
+		</div>
+	</div>
+	<footer>
+		<hr>
+		<span id="me">
+			<a href="https://github.com/waterrr17">CodingPenguin::github.com/waterrr17</a> 
+		</span>
+		<span id="intro">
+			FORIF 2021_1 MINI_HACKATHON
+		</span>
+	</footer>
+</div>
 
 <script src="script.js"></script>
 </body>

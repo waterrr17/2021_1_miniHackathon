@@ -34,9 +34,11 @@ function Count(n) {
 	else{
 		lists[n].innerHTML= parseInt(inCount/60)+" : "+(inCount%60);
 	}
-	if(inCount <= 0) { 
+	if (inCount<60){
+		lists[n].style.color="red";
+	}
+	if(inCount<= 0) { 
 		clearInterval(time[n]);
-		alert("시간이 완료되었습니다.")
 		// 태양 넣기
 	}
 }

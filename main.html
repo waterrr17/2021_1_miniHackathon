@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>회의시간 지키미</title>
+	<title>회의시간지키미</title>
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/6df3e72b0c.js" crossorigin="anonymous"></script>
@@ -12,75 +12,131 @@
 </head>
 <body>
 <div class="container-fluid">
-	<div id="setting">
+	<div id="top">
 		<div class="row">
-			<div class="col text-center" id="ment">
-				<strong>개인 발언 시간을 설정해 주세요!</strong> <br>
-
+			<div class="col-4 text-center">
+				<div id="title">
+					<h1>회의시간 지키미</h1>
+					<hr>
+					<p> 오늘도 회의는 끝날 기미가 보이지 않는다...<br>
+					여름이었다.<br> <span id="mini"> 2021 포리프 미니해커톤</span></p>
+				</div>
 			</div>
-		</div>
-		<div class="row">
-			<div class="col text-center">
-				발언시간: <input type="number" min="0" id="settingMinutes"> 분
-				<input type="number" min="0" id="settingSeconds"> 초
+			<div class="col-3 text-center" id="setting">
+				<strong>개인 발언 시간을 설정해 주세요 :)</strong> <br>
+				발언시간: <input autocomplete="off" type="number" min="0" id="settingMinutes"> 분
+				<input autocomplete="off" type="number" min="0" id="settingSeconds"> 초 
+				<div style="line-height: 60%"><br></div>
+				인원: <input autocomplete="off" type="number" min="1" max="12" id="people"> 명(최대 12명)
+				<div style="line-height: 60%"><br></div> 
+				<input autocomplete="off" type="button" id="start" value="START" onclick="Set()">
 			</div>
-		</div>
-		<div class="row">
-			<div class="col text-center">
-				인원: <input type="number" min="1" max="12" id="people"> 명
-			</div>
-		</div>
-		<div class="row">
-			<div class="col text-center">
-				<input type="button" value="Start" onclick="Set()">
+			<div class="col-4 text-center">
+				<input autocomplete="off" id="subject" placeholder="회의 주제">
+				<br> <span id="confTime"> </span>
 			</div>
 		</div>
 	</div>
 	<div class="row people">
-		<div class="col">
+		<div class="col person">
 			<i class="fas fa-dog icon"></i>
-			<input class="pName" placeholder="이름">
+			<input autocomplete="off" class="pName" placeholder="이름">
 			<br>
 			<span class="countdown">시간 설정 중..</span> <br>
 			<button onclick="Play(0)"><i class="fas fa-play"></i></button> 
 			<button onclick="Stop(0)"><i class="fas fa-pause"></i></button>
 		</div>
-		<div class="col">
-			<span class="countdown">t</span><br><input type="button" value="Play" onclick="Play(1)"> <input type="button" value="Stop" onclick="Stop(1)">
+		<div class="col person">
+			<i class="fas fa-cat icon"></i>
+			<input autocomplete="off" class="pName" placeholder="이름">
+			<br>
+			<span class="countdown">시간 설정 중..</span> <br>
+			<button onclick="Play(1)"><i class="fas fa-play"></i></button> 
+			<button onclick="Stop(1)"><i class="fas fa-pause"></i></button>
 		</div>
-		<div class="col">
-			<span class="countdown">test </span><br><input type="button" value="Play" onclick="Play(2)"> <input type="button" value="Stop" onclick="Stop(2)">
+		<div class="col person">
+			<i class="fas fa-hippo icon"></i>
+			<input autocomplete="off" class="pName" placeholder="이름">
+			<br>
+			<span class="countdown">시간 설정 중..</span> <br>
+			<button onclick="Play(2)"><i class="fas fa-play"></i></button> 
+			<button onclick="Stop(2)"><i class="fas fa-pause"></i></button>
 		</div>
-		<div class="col">
-			<span class="countdown">test </span><br><input type="button" value="Play" onclick="Play(3)"> <input type="button" value="Stop" onclick="Stop(3)">
+		<div class="col person">
+			<i class="fas fa-kiwi-bird icon"></i>
+			<input autocomplete="off" class="pName" placeholder="이름">
+			<br>
+			<span class="countdown">시간 설정 중..</span> <br>
+			<button onclick="Play(3)"><i class="fas fa-play"></i></button> 
+			<button onclick="Stop(3)"><i class="fas fa-pause"></i></button>
 		</div>
 	</div>
 	<div class="row people">
-		<div class="col">
-			<span class="countdown">시간 설정 중..</span> <br><input type="button" value="Play" onclick="Play(4)"> <input type="button" value="Stop" onclick="Stop(4)">
+		<div class="col person">
+			<i class="fas fa-horse icon"></i>
+			<input autocomplete="off" class="pName" placeholder="이름">
+			<br>
+			<span class="countdown">시간 설정 중..</span> <br>
+			<button onclick="Play(4)"><i class="fas fa-play"></i></button> 
+			<button onclick="Stop(4)"><i class="fas fa-pause"></i></button>
 		</div>
-		<div class="col">
-			<span class="countdown">t</span><br><input type="button" value="Play" onclick="Play(5)"> <input type="button" value="Stop" onclick="Stop(5)">
+		<div class="col person">
+			<i class="fas fa-fish icon"></i>
+			<input autocomplete="off" class="pName" placeholder="이름">
+			<br>
+			<span class="countdown">시간 설정 중..</span> <br>
+			<button onclick="Play(5)"><i class="fas fa-play"></i></button> 
+			<button onclick="Stop(5)"><i class="fas fa-pause"></i></button>
 		</div>
-		<div class="col">
-			<span class="countdown">test </span><br><input type="button" value="Play" onclick="Play(6)"> <input type="button" value="Stop" onclick="Stop(6)">
+		<div class="col person">
+			<i class="fas fa-dove icon"></i>
+			<input autocomplete="off" class="pName" placeholder="이름">
+			<br>
+			<span class="countdown">시간 설정 중..</span> <br>
+			<button onclick="Play(6)"><i class="fas fa-play"></i></button> 
+			<button onclick="Stop(6)"><i class="fas fa-pause"></i></button>
 		</div>
-		<div class="col">
-			<span class="countdown">test </span><br><input type="button" value="Play" onclick="Play(7)"> <input type="button" value="Stop" onclick="Stop(7)">
+		<div class="col person">
+			<i class="fas fa-crow icon"></i>
+			<input autocomplete="off" class="pName" placeholder="이름">
+			<br>
+			<span class="countdown">시간 설정 중..</span> <br>
+			<button onclick="Play(7)"><i class="fas fa-play"></i></button> 
+			<button onclick="Stop(7)"><i class="fas fa-pause"></i></button>
 		</div>
 	</div>
 	<div class="row people">
-		<div class="col">
-			<span class="countdown">시간 설정 중..</span> <br><input type="button" value="Play" onclick="Play(8)"> <input type="button" value="Stop" onclick="Stop(8)">
+		<div class="col person">
+			<i class="fas fa-dragon icon"></i>
+			<input autocomplete="off" class="pName" placeholder="이름">
+			<br>
+			<span class="countdown">시간 설정 중..</span> <br>
+			<button onclick="Play(8)"><i class="fas fa-play"></i></button> 
+			<button onclick="Stop(8)"><i class="fas fa-pause"></i></button>
 		</div>
-		<div class="col">
-			<span class="countdown">t</span><br><input type="button" value="Play" onclick="Play(9)"> <input type="button" value="Stop" onclick="Stop(9)">
+		<div class="col person">
+			<i class="fas fa-frog icon"></i>
+			<input autocomplete="off" class="pName" placeholder="이름">
+			<br>
+			<span class="countdown">시간 설정 중..</span> <br>
+			<button onclick="Play(9)"><i class="fas fa-play"></i></button> 
+			<button onclick="Stop(9)"><i class="fas fa-pause"></i></button>
 		</div>
-		<div class="col">
-			<span class="countdown">test </span><br><input type="button" value="Play" onclick="Play(10)"> <input type="button" value="Stop" onclick="Stop(10)">
+		<div class="col person">
+			<i class="fas fa-spider icon"></i>
+			<input autocomplete="off" class="pName" placeholder="이름">
+			<br>
+			<span class="countdown">시간 설정 중..</span> <br>
+			<button onclick="Play(10)"><i class="fas fa-play"></i></button> 
+			<button onclick="Stop(10)"><i class="fas fa-pause"></i></button>
 		</div>
-		<div class="col">
-			<span class="countdown">test </span><br><input type="button" value="Play" onclick="Play(11)"> <input type="button" value="Stop" onclick="Stop(11)">
+		<div class="col person">
+			<i class="fas fa-otter icon"></i>
+			<input autocomplete="off" class="pName" placeholder="이름">
+			<br>
+			<span class="countdown">시간 설정 중..</span> <br>
+			<button onclick="Play(11)"><i class="fas fa-play"></i></button> 
+			<button onclick="Stop(11)"><i class="fas fa-pause"></i></button>
 		</div>
 	</div>
 	<footer>

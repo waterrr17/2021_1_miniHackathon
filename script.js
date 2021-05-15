@@ -1,20 +1,35 @@
 var count = 0;
-var time=[];
+
 var countList=[];
+var stopwatch=0;
+
+var time=[];
+var confTime=0;
+
 
 function Set() {
-	clearInterval(time);
+	clearInterval(confTime);
  	count=60*Number(document.getElementById("settingMinutes").value)+Number(document.getElementById("settingSeconds").value);
-
+ 	stopwatch=0;
  	var lists=document.getElementsByClassName("countdown");
-	var peopleNum=Number(document.getElementById('people').value);
+	var peopleNum=Number(document.getElementById('people').value); 
+	var showPeople=document.getElementsByClassName("person");
+
+	for(var i=0; i<12;i++)
+		showPeople[i].style.visibility="hidden";
+
  	for (var i=0; i<peopleNum; i++){
+ 		countList[i]=count;
+		clearInterval(time[i]);
  		if (count%60<10)
 			lists[i].innerHTML= parseInt(count/60)+" : 0"+(count%60);
 		else
 			lists[i].innerHTML= parseInt(count/60)+" : "+(count%60);
-		countList[i]=count;
+		showPeople[i].style.visibility="visible";
 	}
+	document.getElementById("start").value="RESTART";
+	confTime= setInterval("CountUp()",1000);
+	document.getElementById("confTime").style.color="black";
 }
 
 function Play(n){
@@ -39,6 +54,18 @@ function Count(n) {
 	}
 	if(inCount<= 0) { 
 		clearInterval(time[n]);
-		// 태양 넣기
 	}
+}
+
+function CountUp() {
+	stopwatch=stopwatch+1;
+	var show=document.getElementById("confTime");
+	if (stopwatch%60<10){
+		show.innerHTML=parseInt(stopwatch/60)+" : 0"+(stopwatch%60);
+	}
+	else{
+		show.innerHTML=parseInt(stopwatch/60)+" : "+(stopwatch%60);
+	}
+	if (stopwatch>=300)
+		show.style.color="red";
 }

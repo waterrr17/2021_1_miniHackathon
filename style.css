@@ -1,12 +1,25 @@
-input {width: 45px; height: 25px;}
-input::placeholder{color:#CFCFCF; font-weight: 100;}
+body{background-image: url(ocean.jpg); background-repeat: no-repeat; background-size: 100% 100%}
 
-#setting{border:1px solid blue;}
+h1{text-align:left; font-size: 50px; color: #ff75a0}
+p{text-align: left;}
+#mini{font-size: 12px;}
+
+#confTime{font-size:40px; text-align: center;}
+
+#subject{height:50px;width: 250px; font-size: 35px; border: none; background:none;}
+
+input {width: 70px; height: 25px; text-align: center;}
+input::placeholder{color:#EEEEEE; font-weight: 100;}
+strong{font-size: 20px; color:#ffc93c;}
+#setting{padding:10px; color:#07689f; border:3px #ffc93c dashed; }
+#start{border-color: #ffc93c; border-radius: 30px; background-color: #ffc93c; color:#ff5722;}
 
 .row {text-align: center; width: 100%; margin:0 auto; float:none; min-height: 40px;}
 .row div{margin:0px 20px;}
-.people{ min-height: 160px; border: none;}
-.pName{width: 100px; height: 50px; font-size: 35px; border: none;}
+.people{ min-height: 170px; border: none;}
+.person{visibility: hidden;}
+
+.pName{width: 100px; height: 50px; font-size: 35px; border: none; background:none;}
 #ment { margin:20px auto; }
 .col {margin: 50px auto;}
 *{font-family: 'Poor Story', cursive;}
@@ -14,8 +27,8 @@ button{border: 0; outline: 0; background:none;}
 .icon{font-size:50px;}
 .countdown{font-size:30px;}
 
-
-footer{margin-top: 0px; padding-top: 0px;}
+/*{border:1px solid black;} */ 
+footer{margin: 0px; padding: 0px; color: #ff5722}
 #me{text-align: left;}
-#intro{padding:40px; margin-left: 66%; text-align: right;}
-a{text-decoration: none; color:black;}
+#intro{margin-left: 70%; text-align: right;}
+a{text-decoration: none; color:#ff5722;}

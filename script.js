@@ -26,6 +26,7 @@ function Set() {
 		else
 			lists[i].innerHTML= parseInt(count/60)+" : "+(count%60);
 		showPeople[i].style.visibility="visible";
+		lists[i].style.color="black";
 	}
 	document.getElementById("start").value="RESTART";
 	confTime= setInterval("CountUp()",1000);
